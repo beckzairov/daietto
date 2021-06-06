@@ -121,8 +121,9 @@
     
 }
 
-@media screen and (min-width:1324px){
+@media screen and (min-width:1325px){
     body{
+        overflow-x: hidden;
         margin: 0 134px 0 134px;
     }
 
@@ -186,23 +187,31 @@
 
     .lg-body-container{
         display: grid;
-        grid-template-rows: 75% 25%;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 2fr 1fr;
         /* flex-direction: column-reverse; */
     }
 
     .body-container{
-        grid-column: 1 / span 2;
+        grid-row: 1 / 2;
     }
 
     .lower-container{
-        grid-column: 3;
-        grid-row: 1 / span 2;
+        grid-row: 1 / 3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .lower-container img{
+        width: 100%;
+        height: 80%;
     }
 
     .wrap-social{
         display: flex;
         flex-direction: column-reverse;
-        justify-content: space-between;
+        justify-content: space-around;
     }
 
     .discover{
@@ -215,6 +224,10 @@
         margin-top: 0;
     }
 
+    .app-div .app{
+        padding: 20px 80px;
+    }
+
     .get-app{
         display: flex;
         align-items:center;
@@ -222,8 +235,8 @@
 
     .logo-discover{
         display: flex;
-        justify-content: space-around;
-        margin: 0px 100px;
+        justify-content: space-between;
+        margin: 0px 20px;
     }
     .logo-discover img{
         margin: 0 15px;

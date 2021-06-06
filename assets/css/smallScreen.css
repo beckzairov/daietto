@@ -3,7 +3,9 @@
     --main-black-color: #23233c;
     --main-blue-color: #7f8da0;
     --main-bg-color: #F2F6FF;
-    --margin-main: 0 44px 0 33px;
+    --margin-mini: 0 33px 0 33px;
+    --margin-mid: 0 80px 0 80px;
+    --margin-big: 0 134px 0 134px;
 }
 
 * {
@@ -13,6 +15,7 @@
 }
 
 body {
+    margin:var(--margin-mini);
     overflow-x: hidden;
     background-color: var(--main-bg-color);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -20,7 +23,6 @@ body {
 
 /*// Nav Section (Small Screen) //*/
 nav {
-    margin: 50px 44px 0 33px;
     display: flex;
     justify-content: space-between;
 }
@@ -92,9 +94,6 @@ nav {
 }
 
 /*// Body Content //*/
-.body-container{
-    margin: 50px 44px 0 33px;
-}
 
 div .body-stick{
     width: 62px;
@@ -150,7 +149,6 @@ div .body-stick{
 }
 
 .discover{
-    margin: var(--margin-main);
     display: flex;
     justify-content: space-around;
 }
@@ -176,7 +174,6 @@ div .body-stick{
     color: var(--main-green-color);
 }
 .app-div{
-    margin: var(--margin-main);
     margin-top: 32px;
     display: flex;
     justify-content: center;
@@ -202,7 +199,6 @@ div .body-stick{
 }
 
 .stick-under-discover{
-    margin: var(--margin-main);
     margin-top: 49px;
     width: 62px;
     height: 5px;
@@ -211,7 +207,6 @@ div .body-stick{
 }
 
 .lower-header{
-    margin: var(--margin-main);
     margin-top: 21.5px;
     font-size: 46px;
     line-height: 63px;
@@ -222,43 +217,61 @@ div .body-stick{
 }
 
 .lower-description{
-    margin: var(--margin-main);
     font-size: 20px;
     color: var(--main-blue-color);
     line-height: 28px;
 }
-
+.lg-lower-container{
+    margin-top: 80px;
+}
 /* // CARDS // */
 .cards{
-    display: flex;
-    justify-content: center;
+    display: grid;
+    justify-content: space-between;
     align-items: center;
-    flex-direction: column;
-    margin: var(--margin-main);
-    margin-top: 130px;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
 }
 
 .first-card{
-    
-    margin-bottom: 195px;
-    width: 305px;
-    height: 100%;
+    width: 100%;
+    height: 60%;
     background-image: linear-gradient(125deg, #F2F6FF, #F2F6FF, #fff);
-    border-radius: 153px 153px 50px 50px;
     box-shadow: 50px 50px 50px rgba(171, 182, 204, 0.2);
+    border-radius: 153px 153px 50px 50px;
 }
 
-.first-card .food-card-img{
-    object-fit: contain;
-    transform: translate(-40px, -120px);
+@media screen and (max-width:700px) {
+    .lg-lower-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .first-card{
+        height: 75%;
+    }
+
+    .cards{
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        align-items: center;
+        row-gap: 150px;
+    } 
 }
 
-.first-card .crop-div{
-    margin-top: -120px;
+#spec{
+    transform: translate(0px, 150px);
+}
+#spec-one{
+    transform: translate(0px, 150px);
 }
 
-.first-card div{
-    margin-bottom: 35px;
+.first-card .food-card-img,
+.crop-div, .align-btn{
+    transform: translate(0px, -120px);
 }
 
 .first-card div h2 span{
@@ -278,16 +291,6 @@ div .body-stick{
     display: block;
 }
 
-.first-card div p .black{
-    color: var(--main-black-color);
-}
-
-.first-card div p{
-    font-size: 12px;
-    color: var(--main-blue-color);
-    font-weight: lighter;
-}
-
 .first-card div .p-tags{
     display: flex;
     justify-content: space-between;
@@ -295,15 +298,11 @@ div .body-stick{
     max-width: 143px;
 }
 
-.first-card .align-btn{
-    margin: 0;
-    display: flex;
-    justify-content: flex-end;
-    transform: translate(20px, 20px);
-}
-
 .first-card .align-btn button{
     all: unset;
+    transform: translate(25px, 25px);
+    cursor: pointer;
+    float: right;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -330,82 +329,9 @@ div .body-stick{
     z-index: -2;
 }
 
-.second-card{
-    width: 305px;
-    height: 527px;
-    background-image: linear-gradient(125deg, #F2F6FF, #F2F6FF, #fff);
-    border-radius: 153px 153px 50px 50px;
-    box-shadow: 50px 50px 50px rgba(171, 182, 204, 0.2);
-}
-
-.second-card .food-card-img{
-    object-fit: contain;
-    transform: translate(-20px, -120px);
-}
-
-.second-card .crop-div{
-    margin-top: -30px;
-}
-
-.second-card div{
-    margin-bottom: 35px;
-}
-
-.second-card div h2 span{
-    display: block;
-}
-
-.second-card div h2{
-    color: var(--main-black-color);
-    margin-left: 46px;
-    font-size: 35px;
-}
-
-.second-card div p span{
-    font-size: 26px;
-    color: #EE6A6E;
-    font-weight: bold;
-    display: block;
-}
-
-.second-card div p .black{
-    color: var(--main-black-color);
-}
-
-.second-card div p{
-    font-size: 12px;
-    color: var(--main-blue-color);
-    font-weight: lighter;
-}
-
-.second-card div .p-tags{
-    display: flex;
-    justify-content: space-between;
-    margin-left: 46px;
-    max-width: 143px;
-}
-
-.second-card .align-btn{
-    margin: 0;
-    display: flex;
-    justify-content: flex-end;
-    transform: translate(20px, 20px);
-}
-
-.second-card .align-btn button{
-    all: unset;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--main-black-color);
-    border-radius: 50%;
-    height: 80px;
-    width: 80px;
-}
-
 /* // FOOTER // */
 footer{
-    margin: var(--margin-main);
+    margin-top: 100px;
 }
 footer .footer-stick{
     margin-top: 200px;

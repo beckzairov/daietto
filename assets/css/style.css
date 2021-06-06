@@ -3,7 +3,7 @@
     .lower-header,
     .stick-under-discover,
     .lower-description{
-        margin: unset;
+        margin-top: 10px;
     }
 
     .wrap-social{
@@ -12,7 +12,6 @@
         display: flex;
         flex-direction: column-reverse;
         justify-content: space-around;
-
     }
 
     .app-div{
@@ -36,9 +35,28 @@
         width: 20%;
     }
 
+    .lg-lower-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .cards{
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        align-items: center;
+        row-gap: 150px;
+    }
+
+    .first-card{
+        height: 75%;
+    }
+
     .get-app{
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
     }
 
@@ -47,7 +65,7 @@
     .lg-lower-container,
     footer
     {
-        margin: 10px 20px 0 20px;
+        margin-top: 10px;
     }
     .lg-visible-footer,
     .lg-copyright-footer{
@@ -60,11 +78,21 @@
 }
 
 @media screen and (min-width:863px) and (max-width:1324px) {
-    .body-container,
-    .lower-header,
-    .stick-under-discover,
-    .lower-description{
-        margin: unset;
+
+    body{
+        margin: var(--margin-mid);
+    }
+
+    nav,
+    .lg-body-container,
+    .lg-lower-container,
+    footer
+    {
+        margin-top: 10px;
+    }
+
+    .lg-lower-container{
+        margin-bottom: 260px;
     }
 
     .wrap-social{
@@ -76,14 +104,31 @@
 
     }
 
+    .app{
+        padding: 16px 60px;
+    }
+
+    @media screen and (min-width:863px) and (max-width:986px) {
+        .wrap-social{
+            margin: 0 150px;
+            height: 200px;
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: space-around;
+    
+        }
+
+        .app{
+            padding: 15px 50px;
+        }
+    }
+
     .app-div{
         margin: unset;
         width: 60%;
     }
 
-    .app{
-        padding: 16px 60px;
-    }
+    
 
     .discover{
         display: flex;
@@ -99,20 +144,34 @@
 
     .get-app{
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
     }
 
-    nav,
-    .lg-body-container,
-    .lg-lower-container,
-    footer
-    {
-        margin: 10px 20px 0 20px;
-    }
     .lg-visible-footer,
     .lg-copyright-footer{
         display: none;
+    }
+    
+    .cards{
+        margin-top: 120px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        align-items: center;
+        gap: 60px;
+        row-gap: 150px;
+    }
+    .first-card{
+        width: unset;
+        height: 100%;
+    }
+
+    .first-card .food-card-img{
+        transform: translate(0px, -120px);
+    }
+    .crop-div, .align-btn{
+        transform: translate(0px);
     }
 
     .footer-brand{
@@ -123,7 +182,18 @@
 
 @media screen and (min-width:1325px){
     body{
-        margin: 0 134px 0 134px;
+        margin: var(--margin-big);
+    }
+
+    nav,
+    .lg-lower-container,
+    footer
+    {
+        margin-top: 60px;
+    }
+
+    .lg-body-container{
+        margin-top: 90px;
     }
 
     /*Lg-Nav*/
@@ -188,7 +258,6 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 2fr 1fr;
-        /* flex-direction: column-reverse; */
     }
 
     .body-container{
@@ -219,6 +288,18 @@
         max-width: 60%;
     }
 
+    .cards{
+        transform: translateX(-50px);
+    }
+
+    .rect-rotate{
+        top: 0px;
+    }
+
+    #spec-one{
+        transform: translateY(10px);
+    }
+
     .app-div{
         margin-top: 0;
     }
@@ -247,31 +328,8 @@
         flex-direction: row-reverse;
     }
 
-    .cards{
-        width: 40%;
-        display: flex;
-        flex-direction: row;
-    }
-    .cards div{
-        max-height: 440px;
-        max-width: 306px;
-        margin: 0 50px;
-    }
-    .cards div h2,
-    .cards .crop-div .p-tags{
-        margin-left: 29px;
-    }
-    .cards .first-card {
-        margin-top: -300px;
-    }
-    .cards .second-card {
-        margin-top: 350px;
-    }
-    .cards .first-card .align-btn{
-        transform: translate(35px, -15px);
-    }
-    .cards .second-card .align-btn{
-        transform: translate(35px, -15px);
+    .first-card{
+        height: 80%;
     }
 
     footer .footer-screen .img-first{

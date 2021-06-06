@@ -123,6 +123,7 @@
 
 @media screen and (min-width:1325px){
     body{
+        overflow: unset;
         margin: 0 134px 0 134px;
     }
 
